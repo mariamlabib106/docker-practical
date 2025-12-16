@@ -1,15 +1,19 @@
+ name: Test GitHub Action
+
 on:
   push:
     branches:
-      -master
-
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name:'testing github action'
-        run:pwd
-      - name:'testing printing'
-        run:echo mariam         
+      - uses: actions/checkout@v4
+
+      - name: testing github action
+        run: pwd
+
+      - name: testing printing
+        run: echo mariam
